@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes/router");
 require("dotenv").config();
 mongoose
-  .connect(process.env.MONGOURI)
+  .connect("mongodb+srv://rishi:mom@cluster0.gejqrey.mongodb.net/YOMOM")
   .then(() => {
     console.log("DB Connected");
   })
