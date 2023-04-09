@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "YoMOM generator",
+  "version": "1.0.1",
+  "description": "Your Own Minutes of Meeting generator",
+  "author": "Toxic Coders",
+  "background": {
+    "service_worker": "background_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": [
+        "feature/utils/packages/jquery.min.js",
+        "feature/utils/packages/jspdf.umd.js",
+        "feature/utils/packages/html2canvas.js",
+        "feature/utils/packages/html2pdf.bundle.min.js",
+        "feature/utils/packages/string-similarity.min.js",
+        "feature/utils/utils.js",
+        "feature/record/storage.js",
+        "feature/aistuff/momservices.js",
+        "feature/config/record.js",
+        "feature/record/captionControls.js",
+        "feature/utils/icons.js",
+        "feature/panel/panel.js",
+        "feature/panel/dom.js",
+        "feature/record/transcript.js",
+        "feature/record/settings.js",
+        "feature/record/captionObserver.js",
+        "feature/record/captionProcessing.js",
+        "feature/record/meetingInfo.js",
+        "feature/panel/main.js",
+        "runtime.js"
+      ],
+
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "permissions": ["storage"],
+  "host_permissions": ["https://meet.google.com/*"],
+  "web_accessible_resources": [{
+    "matches": ["<all_urls>"],
+    "resources": ["logo.png"]
+}]
+}

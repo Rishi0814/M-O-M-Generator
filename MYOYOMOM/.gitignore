@@ -1,0 +1,10 @@
+
+# Directories
+node_modules/
+dist/
+
+# Files
+*.log
+*.zip
+*.crx
+*.pem
