@@ -1,8 +1,9 @@
 const meetingModel = require("../model/meetingModel");
 exports.getMOM = async (req, res) => {
   try {
-    const email = req.body.email;
-    const meetings = await meetingModel.find({ emails: email });
+    // const email = req.body.email;
+    const meetings = await meetingModel.find({});
+    // console.log(meetings);
     // const moms = meetings.map((meeting) => meeting.mom);
     res.status(200).json({ meetings });
   } catch (err) {
